@@ -1,0 +1,19 @@
+<%- contentFor('body') %>
+
+<h1>Clientes</h1>
+<div class="row">
+    <div class="col-xs-1-12 p-2">
+        <div class="form-group">
+            <form action="/cliente/edicaoCliente/<%= id %>" method="POST">
+                <label for="nome">Nome</label>
+                <input type="text" class="form-control" id="nome" name="nome">
+                <label for="sobrenome">Sobrenome</label>
+                <input type="text" class="form-control" id="sobrenome" name="sobrenome">
+                <label for="email">E-mail</label>
+                <input type="text" class="form-control" id="email" name="email">
+                <button type="submit" class="btn btn-primary">Editar Cliente</button>
+            </form>
+        </div>
+    </div>
+</div>
+</div>

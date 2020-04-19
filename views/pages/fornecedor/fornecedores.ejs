@@ -1,0 +1,27 @@
+<%- contentFor('body') %>
+
+<h1>fornecedores</h1>
+<a href="./fornecedor/cadastrofornecedor">
+    <button type="button" class="btn btn-primary">Novo Fornecedor</button>
+</a>
+<div class="row">
+    <% fornecedores.forEach(fornecedor => { %>
+    <div class="col-xs-1-12 p-2">
+        <div class="card">
+            <img class="card-img-top" src="https://via.placeholder.com/250" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">
+                    <%= fornecedor.nome %> <%= fornecedor.sobrenome %>
+                </h5>
+                <p class="card-text"><%= fornecedor.email %> </p>
+                <a href="/fornecedor/editar/<%= fornecedor.id %>">
+                    <button type="button" class="btn btn-primary">Editar</button>
+                </a>
+                <a href="/fornecedor/excluirfornecedor/<%= fornecedor.id %>">
+                    <button type="button" class="btn btn-primary">Excluir</button>
+                </a>
+            </div>
+        </div>
+    </div>
+    <% }) %>
+</div>

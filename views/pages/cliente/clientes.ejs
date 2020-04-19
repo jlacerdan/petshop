@@ -1,0 +1,27 @@
+<%- contentFor('body') %>
+
+<h1>Clientes</h1>
+<a href="./cliente/cadastroCliente">
+    <button type="button" class="btn btn-primary">Novo</button>
+</a>
+<div class="row">
+    <% clientes.forEach(cliente => { %>
+    <div class="col-xs-1-12 p-2">
+        <div class="card">
+            <img class="card-img-top" src="https://via.placeholder.com/250" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">
+                    <%= cliente.nome %> <%= cliente.sobrenome %>
+                </h5>
+                <p class="card-text"><%= cliente.email %> </p>
+                <a href="/cliente/editar/<%= cliente.id %>">
+                    <button type="button" class="btn btn-primary">Editar</button>
+                </a>
+                <a href="/cliente/excluirCliente/<%= cliente.id %>">
+                    <button type="button" class="btn btn-primary">Excluir</button>
+                </a>
+            </div>
+        </div>
+    </div>
+    <% }) %>
+</div>
